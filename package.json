@@ -1,0 +1,44 @@
+{
+  "name": "dragndrop",
+  "version": "1.0.0",
+  "description": "Adaptation of native JS Drag & Drop component for ReactJS",
+  "main": "index.js",
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "dependencies": {
+    "path": "^0.12.7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.1",
+    "@babel/preset-env": "^7.13.5",
+    "@babel/preset-react": "^7.12.13",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.2.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.24.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "scripts": {
+    "start": "webpack serve --open",
+    "create": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwwr/dragnDrop.git"
+  },
+  "author": "dwwr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dwwr/dragnDrop/issues"
+  },
+  "homepage": "https://github.com/dwwr/dragnDrop#readme"
+}
