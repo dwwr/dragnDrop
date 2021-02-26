@@ -1,8 +1,17 @@
 import React from 'react';
 
-function App() {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    };
+  };
+
+  render () {
     return (
-        <div>Drag N Drop App</div>
+      <div>Drag N Drop</div>
     );
-}
+  }
+};
 export default App;
