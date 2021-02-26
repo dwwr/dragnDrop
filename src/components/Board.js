@@ -6,7 +6,7 @@ const Board = (props) => {
   return (
     <main class= "board">
       {props.columns.map((column, index)=> {
-        return <Column class={column.class} ondrop="drop(event)" ondragover="allowDrop(event)"/>;
+        return <Column className={column.className} title={column.title} key={index} ondrop="drop(event)" ondragover="allowDrop(event)"/>;
       })}
     </main>
   );

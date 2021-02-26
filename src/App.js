@@ -7,7 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      columns : [{class: 'column column-todo'}, {class: 'column column-ip'}, {class: 'column column-done'}],
+      columns : [{className: 'column column-todo', title: 'To-Do'}, {className: 'column column-ip', title: 'In Progress'}, {className: 'column column-done', title: 'Done'}],
       cards: []
     };
   };
