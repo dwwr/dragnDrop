@@ -9,30 +9,42 @@ const Column = (props) => {
 
   };
 
-  const drop = event => {
-    document.querySelectorAll('.column').forEach(column => column.classList.remove('drop'));
-    document.querySelector(`[data-id="${event.dataTransfer.getData('text/plain')}"]`).remove();
+  const drop = (event, id) => {
+    if (event) {
+      console.log(id);
+      document.querySelectorAll('.column').forEach(column => column.classList.remove('drop'));
+      document.querySelector(`[data-id="${id}"]`).remove();
 
-    event.currentTarget.innerHTML = event.currentTarget.innerHTML + event.dataTransfer.getData('text/html');
+      event.currentTarget.innerHTML = event.currentTarget.innerHTML + event.dataTransfer.getData('text/html');
+    }
+
   };
 
   const allowDrop = event => {
-    event.preventDefault();
+    if (event) {
+      event.preventDefault();
+    }
   };
 
   const dragEnter = event => {
-    event.currentTarget.classList.add('drop');
+    if (event) {
+      event.currentTarget.classList.add('drop');
+    }
   };
 
   const dragLeave = event => {
-    event.currentTarget.classList.remove('drop');
+    if (event) {
+      event.currentTarget.classList.remove('drop');
+    }
   };
 
   return (
-    <div className={props.className} onDrop={drop} onDragOver={allowDrop} onDragEnter={dragEnter} onDragLeave={dragLeave}>
+    <div className={props.className} onDrop={drop}
+    onDragOver={allowDrop} onDragEnter={dragEnter} onDragLeave={dragLeave}>
         <h2>{props.title}</h2>
         {cards.map((card, i) => {
-          return <Card key = {i} />
+          console.log(i)
+          return <Card key={i} index={i} />
         })}
     </div>
 
