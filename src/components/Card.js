@@ -7,8 +7,16 @@ const Card = (props) => {
     event.dataTransfer.setData('text/plain', event.currentTarget.dataset.id);
   };
 
+  const dragStart = event => {
+    event.currentTarget.classList.add('dragging');
+  };
+
+  const dragEnd = event => {
+    event.currentTarget.classList.remove('dragging');
+  };
+
   return (
-    <article className="card" draggable="true" onDragStart={drag} data-id="1">
+    <article className="card" draggable="true" onDragStart={drag} dragStart={dragStart} onDragEnd={dragEnd} data-id="1" >
             <h3>Todo #1</h3>
     </article>
   );

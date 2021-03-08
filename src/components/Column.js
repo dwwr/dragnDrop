@@ -10,8 +10,8 @@ const Column = (props) => {
   };
 
   const drop = event => {
-    document.querySelectorAll('.column').forEach(column => column.classList.remove('drop'));
-    document.querySelector(`[data-id="${event.dataTransfer.getData('text/plain')}"]`).remove();
+    // document.querySelectorAll('.column').forEach(column => column.classList.remove('drop'));
+    // document.querySelector(`[data-id="${event.dataTransfer.getData('text/plain')}"]`).remove();
 
     event.currentTarget.innerHTML = event.currentTarget.innerHTML + event.dataTransfer.getData('text/html');
   };
@@ -20,8 +20,16 @@ const Column = (props) => {
     event.preventDefault();
   };
 
+  const dragEnter = event => {
+    event.currentTarget.classList.add('drop');
+  };
+
+  const dragLeave = event => {
+    event.currentTarget.classList.remove('drop');
+  };
+
   return (
-    <div className={props.className} onDrop={drop} onDragOver={allowDrop}>
+    <div className={props.className} onDrop={drop} onDragOver={allowDrop} onDragEnter={dragEnter} onDragLeave={dragLeave}>
         <h2>{props.title}</h2>
         {cards.map((card, i) => {
           return <Card key = {i} />
@@ -30,5 +38,8 @@ const Column = (props) => {
 
   );
 };
+
+// column.addEventListener('dragenter', dragEnter);
+// column.addEventListener('dragleave', dragLeave);
 
 export default Column;
