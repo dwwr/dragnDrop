@@ -16,7 +16,10 @@ const Card = (props) => {
   };
 
   return (
-    <article className="card" draggable="true" onDragStart={drag} dragStart={dragStart} onDragEnd={dragEnd} data-id="1" >
+    <article className="card" draggable="true"onDragStart={(event)=>{
+      drag(event);
+      dragStart(event);
+      }}  onDragEnd={dragEnd} data-id="1" >
             <h3>Todo #1</h3>
     </article>
   );

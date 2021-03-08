@@ -10,8 +10,8 @@ const Column = (props) => {
   };
 
   const drop = event => {
-    // document.querySelectorAll('.column').forEach(column => column.classList.remove('drop'));
-    // document.querySelector(`[data-id="${event.dataTransfer.getData('text/plain')}"]`).remove();
+    document.querySelectorAll('.column').forEach(column => column.classList.remove('drop'));
+    document.querySelector(`[data-id="${event.dataTransfer.getData('text/plain')}"]`).remove();
 
     event.currentTarget.innerHTML = event.currentTarget.innerHTML + event.dataTransfer.getData('text/html');
   };
