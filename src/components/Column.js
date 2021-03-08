@@ -21,7 +21,7 @@ const Column = (props) => {
   };
 
   return (
-    <div className={props.className} ondrop="drop(event)" ondragover="allowDrop(event)">
+    <div className={props.className} onDrop={drop} onDragOver={allowDrop}>
         <h2>{props.title}</h2>
         {cards.map((card, i) => {
           return <Card key = {i} />

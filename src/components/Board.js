@@ -4,9 +4,9 @@ import Column from './Column';
 const Board = (props) => {
 
   return (
-    <main class= "board">
+    <main className= "board">
       {props.columns.map((column, index)=> {
-        return <Column className={column.className} title={column.title} key={index} ondrop="drop(event)" ondragover="allowDrop(event)"/>;
+        return <Column className={column.className} title={column.title} key={index}/>;
       })}
     </main>
   );
