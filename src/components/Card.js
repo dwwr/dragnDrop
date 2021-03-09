@@ -21,6 +21,7 @@ const Card = (props) => {
   const dragEnd = event => {
     if (event) {
       event.currentTarget.classList.remove('dragging');
+      event.currentTarget.remove();
     }
 
   };
@@ -29,7 +30,7 @@ const Card = (props) => {
     <article className="card" draggable="true"onDragStart={(event)=>{
       drag(event);
       dragStart(event);
-      }}  onDragEnd={dragEnd(event, props.index)} data-id={props.index} >
+      }}  onDragEnd={dragEnd(event, props.index)} data-id={Math.random()} >
             <h3>Todo #{props.index}</h3>
     </article>
   );

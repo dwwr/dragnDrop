@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from './Card';
 
 const Column = (props) => {
@@ -9,11 +9,16 @@ const Column = (props) => {
 
   };
 
+  useEffect(() => {
+    // setCards(cards);
+  });
+
   const drop = (event, id) => {
     if (event) {
-      console.log(id);
+      console.log(event);
       document.querySelectorAll('.column').forEach(column => column.classList.remove('drop'));
-      document.querySelector(`[data-id="${id}"]`).remove();
+      console.log(document.querySelector(`[data-id="${event.dataTransfer.getData('text/plain')}"]`));
+      document.querySelector(`[data-id="${event.dataTransfer.getData('text/plain')}"]`).remove();
 
       event.currentTarget.innerHTML = event.currentTarget.innerHTML + event.dataTransfer.getData('text/html');
     }
